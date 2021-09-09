@@ -1,0 +1,9 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "title",
+    "navigationBarBackgroundColor": "#4e77ef"
+  }
+}

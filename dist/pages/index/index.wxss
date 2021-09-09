@@ -1,0 +1,28 @@
+.app {
+  text-align: center;
+  padding: 0 24rpx;
+}
+
+.text {
+  margin-top: 64rpx;
+}
+
+.header {
+  font-size: 40rpx;
+  color: #333;
+}
+
+.app___2lhPP {
+  text-align: center;
+  padding: 0 24rpx;
+}
+
+.text___XEtZ5 {
+  margin-top: 64rpx;
+}
+
+.header___3qOk9 {
+  font-size: 40rpx;
+  color: #333;
+}
+
