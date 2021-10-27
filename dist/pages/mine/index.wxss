@@ -1,0 +1,18 @@
+.text {
+  margin-top: 64rpx;
+}
+
+.header {
+  font-size: 40rpx;
+  color: #333;
+}
+
+.text___2ex0Z {
+  margin-top: 64rpx;
+}
+
+.header___2IhNK {
+  font-size: 40rpx;
+  color: #333;
+}
+
