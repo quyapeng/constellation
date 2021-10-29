@@ -5,7 +5,7 @@ import styles from "./index.css";
 export default () => {
   return (
     <View className={styles.app}>
-      <View className={styles.label}></View>
+      <View className={styles.header}>个人中心</View>
     </View>
   );
 };
