@@ -5,5 +5,6 @@
   "window": {
     "navigationBarTitleText": "title",
     "navigationBarBackgroundColor": "#4e77ef"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
