@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { View, Text } from "@tarojs/components";
+import { View } from "@tarojs/components";
 import "./index.scss";
 
 export default class Index extends Component {
@@ -15,8 +15,8 @@ export default class Index extends Component {
 
   render() {
     return (
-      <View className="index">
-        <Text>个人中心</Text>
+      <View className="message">
+        <View className="header">消息</View>
       </View>
     );
   }

@@ -1,6 +1,20 @@
-import * as React from 'react';
-import './app.css';
+import { Component } from 'react'
+import './app.scss'
 
-const App: React.FC = props => props.children as React.ReactElement;
+class App extends Component {
 
-export default App;
+  componentDidMount () {}
+
+  componentDidShow () {}
+
+  componentDidHide () {}
+
+  componentDidCatchError () {}
+
+  // this.props.children 是将要会渲染的页面
+  render () {
+    return this.props.children
+  }
+}
+
+export default App
