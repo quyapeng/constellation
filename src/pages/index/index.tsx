@@ -1,7 +1,7 @@
 import { Component } from "react";
-import { View, Swiper, SwiperItem, Image } from "@tarojs/components";
+import { View } from "@tarojs/components";
 import "./index.scss";
-const img = require("../../images/banner.png");
+// const img = require("../../images/banner.png");
 export default class Index extends Component {
   componentWillMount() {}
 
@@ -16,7 +16,15 @@ export default class Index extends Component {
   render() {
     return (
       <View className="index">
-        <Swiper
+        <View className="tab_context">123</View>
+        {/* <View className="page-section-spacing">
+          <View className="flex-wrp" style="flex-direction:row;">
+            <View className="flex-item demo-text-1"></View>
+            <View className="flex-item demo-text-2"></View>
+            <View className="flex-item demo-text-3"></View>
+          </View>
+        </View> */}
+        {/* <Swiper
           className="test-h"
           indicatorColor="#999"
           indicatorActiveColor="#333"
@@ -49,7 +57,7 @@ export default class Index extends Component {
               />
             </View>
           </SwiperItem>
-        </Swiper>
+        </Swiper> */}
       </View>
     );
   }
