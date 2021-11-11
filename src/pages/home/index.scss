@@ -1,0 +1,34 @@
+.index {
+	margin: 30rpx;
+}
+.tab_banner {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	.tab_icon {
+		width: 50rpx;
+		Image,
+		Text {
+			display: block;
+			width: 100%;
+		}
+		Image {
+			height: 100%;
+			height: 50rpx;
+		}
+		Text {
+			text-align: center;
+			color: #666;
+			font-size: 18rpx;
+			margin-top: 10rpx;
+		}
+	}
+}
+.tab_card {
+	display: block;
+	border-radius: 50rpx;
+	background-color: linear-gradient(
+		45deg rgba(0, 0, 0, 1),
+		rgba(255, 0, 0, 1) 10%
+	);
+}
