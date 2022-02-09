@@ -20,9 +20,6 @@
 	"author": "miaqu",
 	"maintainers": [],
 	"contributors": [],
-	"engines": {
-		"node": "12.18.0"
-	},
 	"bundledDependencies": [
 		"@tarojs/taro"
 	],

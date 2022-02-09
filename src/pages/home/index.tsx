@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Image, Text } from '@tarojs/components'
+import { View, Image, Text, Swiper, SwiperItem } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 import Meta from '~/utils/meta'
 // import { AtNoticebar, AtTag } from 'taro-ui'
@@ -40,13 +40,15 @@ type PageState = {
 	modalVisible: boolean
 	icon: Array<{
 		// mode?: string
-		src: string
+		src: any
 		name: string
 	}>
 	tabList: Array<{
 		id: number
 		text: string
 	}>
+	currentTab: number
+	iconurl: any
 }
 
 interface Index {
@@ -65,27 +67,27 @@ class Index extends Component {
 			{
 				name: '星座',
 				// mode: 'aspectFit',
-				src: 'https://hxt-content.oss-cn-shanghai.aliyuncs.com/public/user/img/20210408150028_3b5e5b46b4923d36144bd887af669bde_RAW.png',
+				src: require('~/assets/images/label/icon_1.png'),
 				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon1.png',
 			},
 			{
 				name: '星语',
-				src: 'https://hxt-content.oss-cn-shanghai.aliyuncs.com/public/user/img/20210408150028_3b5e5b46b4923d36144bd887af669bde_RAW.png',
+				src: require('~/assets/images/label/icon_2.png'),
 				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon2.png',
 			},
 			{
 				name: '星盘',
-				src: 'https://hxt-content.oss-cn-shanghai.aliyuncs.com/public/user/img/20210408150028_3b5e5b46b4923d36144bd887af669bde_RAW.png',
+				src: require('~/assets/images/label/icon_3.png'),
 				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon3.png',
 			},
 			{
 				name: '运势',
-				src: 'https://hxt-content.oss-cn-shanghai.aliyuncs.com/public/user/img/20210408150028_3b5e5b46b4923d36144bd887af669bde_RAW.png',
+				src: require('~/assets/images/label/icon_4.png'),
 				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon4.png',
 			},
 			{
 				name: '更多',
-				src: 'https://hxt-content.oss-cn-shanghai.aliyuncs.com/public/user/img/20210408150028_3b5e5b46b4923d36144bd887af669bde_RAW.png',
+				src: require('~/assets/images/label/more.png'),
 				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon5.png',
 			},
 		],
@@ -103,6 +105,8 @@ class Index extends Component {
 				text: '星座',
 			},
 		],
+		currentTab: 0,
+		iconurl: require('~/assets/images/label/icon_1.png'),
 	}
 
 	/**
@@ -178,6 +182,9 @@ class Index extends Component {
 	 */
 	handleTabChange(e) {
 		console.log('handleTabChange', e)
+		this.setState({
+			currentTab: e.id - 1,
+		})
 	}
 
 	handleOk() {
@@ -189,6 +196,37 @@ class Index extends Component {
 	render() {
 		return (
 			<View className='index'>
+				<Swiper
+					className='index-banner'
+					indicatorColor='#999'
+					indicatorActiveColor='#333'
+					circular
+					indicatorDots
+					autoplay
+				>
+					<SwiperItem>
+						<Image
+							style='width:100%;height: 100%;background: #fff;'
+							src={require('~/assets/images/label/banner.png')}
+						/>
+					</SwiperItem>
+					<SwiperItem>
+						<View className='demo-text-2'>
+							<Image
+								style='width:100%;height: 100%;background: #fff;'
+								src={require('~/assets/images/label/banner.png')}
+							/>
+						</View>
+					</SwiperItem>
+					<SwiperItem>
+						<View className='demo-text-3'>
+							<Image
+								style='width:100%;height: 100%;background: #fff;'
+								src={require('~/assets/images/label/banner.png')}
+							/>
+						</View>
+					</SwiperItem>
+				</Swiper>
 				<View className='tab_banner'>
 					{this.state.icon.map((i, index) => {
 						return (
@@ -200,12 +238,12 @@ class Index extends Component {
 					})}
 				</View>
 				<View className='tab_card'>
-					<Text>今日运势</Text>
-					<Text>更多运势</Text>
+					<Text className='title'>今日运势</Text>
+					<Text className='more'>更多运势 &gt;&gt; </Text>
 				</View>
 				{/* <Tabbar tabList={this.state.tabList} /> */}
 				<HdTabs
-					currentTab={1}
+					currentTab={this.state.currentTab}
 					list={this.state.tabList}
 					onChange={this.handleTabChange.bind(this)}
 				/>
