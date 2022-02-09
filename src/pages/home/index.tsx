@@ -27,10 +27,10 @@ type PageStateProps = {
 		incrementAsync: Function
 	}
 }
-type obj = {
-	mode: string
-	src: string
-}
+// type obj = {
+// 	mode: string
+// 	src: string
+// }
 type PageState = {
 	testState: string
 	mobileText: string // 手机号归属地展示文字
