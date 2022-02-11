@@ -68,27 +68,22 @@ class Index extends Component {
 				name: '星座',
 				// mode: 'aspectFit',
 				src: require('~/assets/images/label/icon_1.png'),
-				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon1.png',
 			},
 			{
 				name: '星语',
 				src: require('~/assets/images/label/icon_2.png'),
-				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon2.png',
 			},
 			{
 				name: '星盘',
 				src: require('~/assets/images/label/icon_3.png'),
-				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon3.png',
 			},
 			{
 				name: '运势',
 				src: require('~/assets/images/label/icon_4.png'),
-				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon4.png',
 			},
 			{
 				name: '更多',
 				src: require('~/assets/images/label/more.png'),
-				// src: 'https://c648ubq5g6h8s6r48jfg.baseapi.memfiredb.com/storage/v1/object/public/images/tab/icon5.png',
 			},
 		],
 		tabList: [

@@ -32,10 +32,10 @@ class App extends Component {
     pages: [
       "pages/home/index",
       "pages/common/imgPreview",
-      "pages/lab/FormValidate",
-      "pages/lab/comp",
-      "pages/lab/hooks",
-      "pages/lab/index",
+      "pages/message/FormValidate",
+      "pages/message/comp",
+      "pages/message/hooks",
+      "pages/message/index",
       "pages/user/index"
 		],
 		subPackages: [
@@ -60,7 +60,7 @@ class App extends Component {
 				{
 					iconPath: 'assets/images/icon/icon_tabbar_goods_default.png',
 					selectedIconPath: 'assets/images/icon/icon_tabbar_goods_selected.png',
-					pagePath: 'pages/lab/index',
+					pagePath: 'pages/message/index',
 					text: '消息中心',
 				},
 				{

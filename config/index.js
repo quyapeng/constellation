@@ -116,7 +116,7 @@ const config = {
 			customRoutes: {
 				// 自定义路由 跳转时还是需要使用app.tsx中定义的路由 但是地址栏会表现为自定义的路由 且通过地址栏输入可以访问到对应的页面
 				'/pages/index/index': '/index',
-				'/pages/lab/index': '/lab/index',
+				'/pages/message/index': '/message/index',
 				'/pages/user/index': '/user/index',
 			},
 		},

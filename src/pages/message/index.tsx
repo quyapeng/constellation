@@ -1,6 +1,6 @@
 import { ComponentType } from 'react'
 import Taro, { Component, Config } from '@tarojs/taro'
-import { View } from '@tarojs/components'
+import { View, Image, Text, Icon } from '@tarojs/components'
 import { observer, inject } from '@tarojs/mobx'
 
 import QQMapWSService from '~/services/qqMap/ws.service'
@@ -53,7 +53,7 @@ class LabIndex extends Component {
 	handleCustomRoute() {
 		console.error('into handleCustomRoute')
 		Taro.switchTab({
-			url: '/pages/lab/index',
+			url: '/pages/message/index',
 		})
 	}
 
@@ -70,7 +70,41 @@ class LabIndex extends Component {
 	}
 
 	render() {
-		return <View className='index'>消息</View>
+		return (
+			<View className='message'>
+				<View className='label_mess'>
+					<View className='tab_icon'>
+						<Image src={require('~/assets/images/label/banner.png')} />
+						<Text>好友申请</Text>
+					</View>
+					<View className='tab_icon'>
+						<Image src={require('~/assets/images/label/banner.png')} />
+						<Text>我的好友</Text>
+					</View>
+					<View className='tab_icon'>
+						<Image src={require('~/assets/images/label/banner.png')} />
+						<Text>附近的人</Text>
+					</View>
+					<View className='tab_icon'>
+						<Image src={require('~/assets/images/label/banner.png')} />
+						<Text>我的收藏</Text>
+					</View>
+				</View>
+				<View className='list'>
+					<View className='list_item'>
+						<View className='avatar'>
+							<Image src={require('~/assets/images/label/banner.png')} />
+							<Icon size='20' type='warn' color='red' />
+						</View>
+						<View>
+							<Text>天蝎宝宝</Text>
+							<Text>今天运势好到爆～</Text>
+						</View>
+						<View>10:30</View>
+					</View>
+				</View>
+			</View>
+		)
 	}
 }
 
