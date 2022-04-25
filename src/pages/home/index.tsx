@@ -1,8 +1,8 @@
-import { ComponentType } from 'react'
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Image, Text, Swiper, SwiperItem } from '@tarojs/components'
-import { observer, inject } from '@tarojs/mobx'
-import Meta from '~/utils/meta'
+import { ComponentType } from 'react';
+import Taro, { Component, Config } from '@tarojs/taro';
+import { View, Image, Text, Swiper, SwiperItem } from '@tarojs/components';
+import { observer, inject } from '@tarojs/mobx';
+import Meta from '~/utils/meta';
 // import { AtNoticebar, AtTag } from 'taro-ui'
 import {
 	// HdPaging,
@@ -12,48 +12,48 @@ import {
 	// HdModal,
 	// HdNodata,
 	HdTabs,
-} from 'taro-ui-hd'
+} from 'taro-ui-hd';
 
 // import Tabbar from '~/components/Tabbar/Tabbar'
 // import QQMapWSService from '~/services/qqMap/ws.service'
 // import LianouService from '~/services/root/drug.service'
-import './index.scss'
+import './index.scss';
 
 type PageStateProps = {
 	counter: {
-		counter: number
-		increment: Function
-		decrement: Function
-		incrementAsync: Function
-	}
-}
+		counter: number;
+		increment: Function;
+		decrement: Function;
+		incrementAsync: Function;
+	};
+};
 // type obj = {
 // 	mode: string
 // 	src: string
 // }
 type PageState = {
-	testState: string
-	mobileText: string // 手机号归属地展示文字
+	testState: string;
+	mobileText: string; // 手机号归属地展示文字
 	/**
 	 * 弹窗
 	 */
-	modalVisible: boolean
+	modalVisible: boolean;
 	icon: Array<{
 		// mode?: string
-		src: any
-		name: string
-	}>
+		src: any;
+		name: string;
+	}>;
 	tabList: Array<{
-		id: number
-		text: string
-	}>
-	currentTab: number
-	iconurl: any
-}
+		id: number;
+		text: string;
+	}>;
+	currentTab: number;
+	iconurl: any;
+};
 
 interface Index {
-	props: PageStateProps
-	state: PageState
+	props: PageStateProps;
+	state: PageState;
 }
 
 @inject('counter')
@@ -102,7 +102,7 @@ class Index extends Component {
 		],
 		currentTab: 0,
 		iconurl: require('~/assets/images/label/icon_1.png'),
-	}
+	};
 
 	/**
 	 * 指定config的类型声明为: Taro.Config
@@ -113,37 +113,37 @@ class Index extends Component {
 	 */
 	config: Config = {
 		navigationBarTitleText: '首页',
-	}
+	};
 
 	componentDidShow() {
-		console.error('into componentDidshow at home index', APP_CONF.API_HOST)
-		Meta.setTitle('首页')
+		console.error('into componentDidshow at home index', APP_CONF.API_HOST);
+		Meta.setTitle('首页');
 	}
 	componentDidHide() {
-		console.error('into componentDidhide at home index')
+		console.error('into componentDidhide at home index');
 	}
 
 	increment = () => {
 		this.setState({
 			testState: `${this.state.testState}expand`,
-		})
-		const { counter } = this.props
-		counter.increment()
-	}
+		});
+		const { counter } = this.props;
+		counter.increment();
+	};
 
 	decrement = () => {
-		const { counter } = this.props
-		counter.decrement()
-	}
+		const { counter } = this.props;
+		counter.decrement();
+	};
 
 	incrementAsync = () => {
-		const { counter } = this.props
-		counter.incrementAsync()
-	}
+		const { counter } = this.props;
+		counter.incrementAsync();
+	};
 
 	// 手机号输入
 	handleInput(type, e) {
-		console.log('type', type, e)
+		console.log('type', type, e);
 	}
 
 	async handleJSONPTest() {
@@ -169,23 +169,23 @@ class Index extends Component {
 	handleModalClose() {
 		this.setState({
 			modalVisible: false,
-		})
+		});
 	}
 
 	/**
 	 * handleTabChange
 	 */
 	handleTabChange(e) {
-		console.log('handleTabChange', e)
+		console.log('handleTabChange', e);
 		this.setState({
 			currentTab: e.id - 1,
-		})
+		});
 	}
 
 	handleOk() {
 		this.setState({
 			modalVisible: false,
-		})
+		});
 	}
 
 	render() {
@@ -229,7 +229,7 @@ class Index extends Component {
 								<Image src={i.src} />
 								<Text>{i.name}</Text>
 							</View>
-						)
+						);
 					})}
 				</View>
 				<View className='tab_card'>
@@ -243,8 +243,8 @@ class Index extends Component {
 					onChange={this.handleTabChange.bind(this)}
 				/>
 			</View>
-		)
+		);
 	}
 }
 
-export default Index as ComponentType
+export default Index as ComponentType;

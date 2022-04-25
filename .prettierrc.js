@@ -1,5 +1,5 @@
 module.exports = {
-	semi: false, // 使用分号 默认true
+	semi: true, // 使用分号 默认true
 	singleQuote: true, // 使用单引号 默认false jsx中无效
 	// tab缩进大小,默认为2
 	tabWidth: 2,
