@@ -2,14 +2,14 @@
  * 表单验证测试
  */
 
-import { ComponentType } from 'react'
-import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Input } from '@tarojs/components'
-import { observer, inject } from '@tarojs/mobx'
-import toast from '~/utils/toast'
-import Meta from '~/utils/meta'
+import { ComponentType } from 'react';
+import Taro, { Component } from '@tarojs/taro';
+import { View, Button, Input } from '@tarojs/components';
+import { observer, inject } from '@tarojs/mobx';
+import toast from '~/utils/toast';
+// import Meta from '~/utils/meta';Meta.setTitle('表单验证测试')
 
-import './FormValidate.scss'
+import './FormValidate.scss';
 
 /**
  * 页面props
@@ -18,8 +18,8 @@ type PageStateProps = {
 	/**
 	 * 子元素
 	 */
-	children?: any
-}
+	children?: any;
+};
 
 /**
  * 页面state
@@ -28,41 +28,41 @@ type PageState = {
 	/**
 	 * 电话
 	 */
-	phone: string
+	phone: string;
 	/**
 	 * 地址
 	 */
-	address: string
-}
+	address: string;
+};
 
 interface FormValidate {
-	props: PageStateProps
-	state: PageState
-	FormValidator: any
+	props: PageStateProps;
+	state: PageState;
+	FormValidator: any;
 }
 
 @inject('counter')
 @observer
 class FormValidate extends Component {
 	constructor(props) {
-		super(props)
-		Meta.setTitle('表单验证测试')
+		super(props);
+		// Meta.setTitle('表单验证测试')
 		this.state = {
 			phone: '',
 			address: '',
-		}
+		};
 	}
 
 	// 监听mobx状态变化
 	componentWillReact() {
-		console.log('componentWillReact', this.props)
+		console.log('componentWillReact', this.props);
 	}
 
 	/**
 	 * 表单验证
 	 */
 	handleValidate() {
-		const funcs = this._validator.funcs
+		const funcs = this._validator.funcs;
 		const validResult = this._validator.validate(
 			{
 				phone: [
@@ -84,18 +84,18 @@ class FormValidate extends Component {
 			},
 			true,
 			this.state
-		)
+		);
 		if (validResult.success) {
-			toast.show('验证成功')
+			toast.show('验证成功');
 		} else {
-			console.error('validResult', validResult)
+			console.error('validResult', validResult);
 		}
 	}
 
 	handleInput(type, e) {
 		this.setState({
 			[type]: e.detail.value,
-		})
+		});
 	}
 
 	render() {
@@ -114,8 +114,8 @@ class FormValidate extends Component {
 					onInput={this.handleInput.bind(this, 'address')}
 				/>
 			</View>
-		)
+		);
 	}
 }
 
-export default FormValidate as ComponentType
+export default FormValidate as ComponentType;

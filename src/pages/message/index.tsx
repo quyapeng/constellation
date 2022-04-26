@@ -1,29 +1,27 @@
-import { ComponentType } from 'react'
-import Taro, { Component, Config } from '@tarojs/taro'
-import { View, Image, Text, Icon } from '@tarojs/components'
-import { observer, inject } from '@tarojs/mobx'
+import { ComponentType } from 'react';
+import Taro, { Component, Config } from '@tarojs/taro';
+import { View, Image, Text, Icon } from '@tarojs/components';
+import { observer, inject } from '@tarojs/mobx';
 
-import QQMapWSService from '~/services/qqMap/ws.service'
-import LianouService from '~/services/root/drug.service'
-import './index.scss'
+import QQMapWSService from '~/services/qqMap/ws.service';
+import LianouService from '~/services/root/drug.service';
+import './index.scss';
 
 type PageStateProps = {
 	counter: {
-		counter: number
-		increment: Function
-		decrement: Function
-		incrementAsync: Function
-	}
-}
+		counter: number;
+		increment: Function;
+		decrement: Function;
+		incrementAsync: Function;
+	};
+};
 
 interface LabIndex {
-	props: PageStateProps
-	state: {}
+	props: PageStateProps;
+	state: {};
 }
 
-@inject('counter')
-@observer
-class LabIndex extends Component {
+const LabIndex = () => {
 	/**
 	 * 指定config的类型声明为: Taro.Config
 	 *
@@ -31,81 +29,45 @@ class LabIndex extends Component {
 	 * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
 	 * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
 	 */
-	config: Config = {
-		navigationBarTitleText: '首页',
-	}
+	// config: Config = {
+	// 	navigationBarTitleText: '消息中心',
+	// }
 
-	async handleJSONPTest() {
-		const result = await QQMapWSService.geocoder({
-			location: `28.2532,112.87887`,
-			get_poi: 0,
-		})
-		console.log('result', result)
-	}
-
-	async handleProxyText() {
-		const result = await LianouService.queryDiseaseByDrugName({
-			ComName: '阿莫西林胶囊',
-		})
-		console.log('result', result)
-	}
-
-	handleCustomRoute() {
-		console.error('into handleCustomRoute')
-		Taro.switchTab({
-			url: '/pages/message/index',
-		})
-	}
-
-	hanldeCompTest(type) {
-		Taro.navigateTo({
-			url: `/pages/lab/comp?type=${type}`,
-		})
-	}
-
-	handleFormValidate() {
-		Taro.navigateTo({
-			url: `/pages/lab/FormValidate`,
-		})
-	}
-
-	render() {
-		return (
-			<View className='message'>
-				<View className='label_mess'>
-					<View className='tab_icon'>
-						<Image src={require('~/assets/images/label/banner.png')} />
-						<Text>好友申请</Text>
-					</View>
-					<View className='tab_icon'>
-						<Image src={require('~/assets/images/label/banner.png')} />
-						<Text>我的好友</Text>
-					</View>
-					<View className='tab_icon'>
-						<Image src={require('~/assets/images/label/banner.png')} />
-						<Text>附近的人</Text>
-					</View>
-					<View className='tab_icon'>
-						<Image src={require('~/assets/images/label/banner.png')} />
-						<Text>我的收藏</Text>
-					</View>
+	return (
+		<View className='message'>
+			<View className='label_mess'>
+				<View className='tab_icon'>
+					<Image src={require('~/assets/images/label/banner.png')} />
+					<Text>好友申请</Text>
 				</View>
-				<View className='list'>
-					<View className='list_item'>
-						<View className='avatar'>
-							<Image src={require('~/assets/images/label/banner.png')} />
-							<Icon size='20' type='warn' color='red' />
-						</View>
-						<View>
-							<Text>天蝎宝宝</Text>
-							<Text>今天运势好到爆～</Text>
-						</View>
-						<View>10:30</View>
-					</View>
+				<View className='tab_icon'>
+					<Image src={require('~/assets/images/label/banner.png')} />
+					<Text>我的好友</Text>
+				</View>
+				<View className='tab_icon'>
+					<Image src={require('~/assets/images/label/banner.png')} />
+					<Text>附近的人</Text>
+				</View>
+				<View className='tab_icon'>
+					<Image src={require('~/assets/images/label/banner.png')} />
+					<Text>我的收藏</Text>
 				</View>
 			</View>
-		)
-	}
-}
+			<View className='list'>
+				<View className='list_item'>
+					<View className='avatar'>
+						<Image src={require('~/assets/images/label/banner.png')} />
+						<Icon size='20' type='warn' color='red' />
+					</View>
+					<View>
+						<Text>天蝎宝宝</Text>
+						<Text>今天运势好到爆～</Text>
+					</View>
+					<View>10:30</View>
+				</View>
+			</View>
+		</View>
+	);
+};
 
-export default LabIndex as ComponentType
+export default LabIndex;

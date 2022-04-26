@@ -1,12 +1,12 @@
 /**
  * 注意：此文件为编译时自动生成，如需修改入口文件请前往 build/template/app.tsx
  */
-import Taro, { Component, Config } from '@tarojs/taro'
-import { Provider } from '@tarojs/mobx'
-import Index from './pages/home/index'
-import store from './store'
-import { checkUpdate } from './utils/mp'
-import './app.scss'
+import Taro, { Component, Config } from '@tarojs/taro';
+import { Provider } from '@tarojs/mobx';
+import Index from './pages/home/index';
+import store from './store';
+import { checkUpdate } from './utils/mp';
+import './app.scss';
 // 如果需要在 h5 环境中开启 React Devtools
 // 取消以下注释：
 // if (process.env.NODE_ENV !== 'production' && process.env.TARO_ENV === 'h5')  {
@@ -14,8 +14,8 @@ import './app.scss'
 // }
 // h5非生产环境添加vconsole
 if (process.env.TARO_ENV === 'h5' && process.env.NODE_ENV !== 'pro') {
-	const VConsole = require('vconsole')
-	new VConsole()
+	const VConsole = require('vconsole');
+	new VConsole();
 }
 class App extends Component {
 	/**
@@ -57,27 +57,27 @@ class App extends Component {
 					pagePath: 'pages/home/index',
 					text: '首页',
 				},
-				{
-					iconPath: 'assets/images/icon/icon_tabbar_goods_default.png',
-					selectedIconPath: 'assets/images/icon/icon_tabbar_goods_selected.png',
-					pagePath: 'pages/message/index',
-					text: '消息中心',
-				},
-				{
-					iconPath: 'assets/images/icon/icon_tabbar_order_default.png',
-					selectedIconPath: 'assets/images/icon/icon_tabbar_order_selected.png',
-					pagePath: 'pages/user/index',
-					text: '我的',
-				},
+				// {
+				// 	iconPath: 'assets/images/icon/icon_tabbar_goods_default.png',
+				// 	selectedIconPath: 'assets/images/icon/icon_tabbar_goods_selected.png',
+				// 	pagePath: 'pages/message/index',
+				// 	text: '消息中心',
+				// },
+				// {
+				// 	iconPath: 'assets/images/icon/icon_tabbar_order_default.png',
+				// 	selectedIconPath: 'assets/images/icon/icon_tabbar_order_selected.png',
+				// 	pagePath: 'pages/user/index',
+				// 	text: '我的',
+				// },
 			],
 		},
-	}
+	};
 	componentDidShow() {
 		// 检查更新
-		checkUpdate()
+		checkUpdate();
 	}
 	componentDidCatchError(err) {
-		console.error('catch error', err)
+		console.error('catch error', err);
 	}
 	// 在 App 类中的 render() 函数没有实际作用
 	// 请勿修改此函数
@@ -86,7 +86,7 @@ class App extends Component {
 			<Provider store={store}>
 				<Index />
 			</Provider>
-		)
+		);
 	}
 }
-Taro.render(<App />, document.getElementById('app'))
+Taro.render(<App />, document.getElementById('app'));

@@ -2,8 +2,9 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "test",
 	"description": "Taro2.x",
-	"appid": "wxe802de601a7d6ce7",
+  "appid": "wxe802de601a7d6ce7",
 	"enableShareAppMessage": true,
+	"enableShareTimeline": true,
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
