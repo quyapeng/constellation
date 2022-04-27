@@ -1,59 +1,19 @@
 import { ComponentType } from 'react';
-import Taro, { Component, Config, useState } from '@tarojs/taro';
+import Taro, {
+	Component,
+	Config,
+	useState,
+	useReady,
+	useDidShow,
+	useDidHide,
+	usePullDownRefresh,
+} from '@tarojs/taro';
 import { View, Image, Text, Swiper, SwiperItem } from '@tarojs/components';
-import { observer, inject } from '@tarojs/mobx';
-// import { AtNoticebar, AtTag } from 'taro-ui'
-import {
-	// HdPaging,
-	// HdBackToTop,
-	// HdCard,
-	// HdCountdown,
-	// HdModal,
-	// HdNodata,
-	HdTabs,
-} from 'taro-ui-hd';
 
-// import Tabbar from '~/components/Tabbar/Tabbar'
-// import QQMapWSService from '~/services/qqMap/ws.service'
-// import LianouService from '~/services/root/drug.service'
+import { HdTabs } from 'taro-ui-hd';
+
+import HomeService from '~/services/home/home.service';
 import './index.scss';
-
-type PageStateProps = {
-	counter: {
-		counter: number;
-		increment: Function;
-		decrement: Function;
-		incrementAsync: Function;
-	};
-};
-// type obj = {
-// 	mode: string
-// 	src: string
-// }
-type PageState = {
-	testState: string;
-	mobileText: string; // 手机号归属地展示文字
-	/**
-	 * 弹窗
-	 */
-	modalVisible: boolean;
-	icon: Array<{
-		// mode?: string
-		src: any;
-		name: string;
-	}>;
-	tabList: Array<{
-		id: number;
-		text: string;
-	}>;
-	currentTab: number;
-	iconurl: any;
-};
-
-interface Index {
-	props: PageStateProps;
-	state: PageState;
-}
 
 const Index = () => {
 	let state = {
@@ -101,75 +61,11 @@ const Index = () => {
 		iconurl: require('~/assets/images/label/icon_1.png'),
 	};
 
-	/**
-	 * 指定config的类型声明为: Taro.Config
-	 *
-	 * 由于 typescript 对于 object 类型推导只能推出 Key 的基本类型
-	 * 对于像 navigationBarTextStyle: 'black' 这样的推导出的类型是 string
-	 * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
-	 */
-	// config: Config = {
-	// 	navigationBarTitleText: '首页',
+	// const async function getBanner() {
+	// 	const result = await HomeService.getBanner();
+	// 	console.log('result', result);
 	// };
 
-	// const componentDidShow=()=> {
-	// 	console.error('into componentDidshow at home index', APP_CONF.API_HOST);
-	// 	Meta.setTitle('首页');
-	// }
-	// componentDidHide() {
-	// 	console.error('into componentDidhide at home index');
-	// }
-
-	// increment = () => {
-	// 	this.setState({
-	// 		testState: `${state.testState}expand`,
-	// 	});
-	// 	const { counter } = this.props;
-	// 	counter.increment();
-	// };
-
-	// decrement = () => {
-	// 	const { counter } = this.props;
-	// 	counter.decrement();
-	// };
-
-	// incrementAsync = () => {
-	// 	const { counter } = this.props;
-	// 	counter.incrementAsync();
-	// };
-
-	// // 手机号输入
-	// handleInput(type, e) {
-	// 	console.log('type', type, e);
-	// }
-
-	// async handleJSONPTest() {
-	// 	// const result = await QQMapWSService.geocoder({
-	// 	// 	location: `28.2532,112.87887`,
-	// 	// 	get_poi: 0,
-	// 	// })
-	// 	// console.log('result', result)
-	// }
-
-	// async handleProxyText() {
-	// 	// const result = await LianouService.queryDiseaseByDrugName({
-	// 	// 	ComName: '阿莫西林胶囊',
-	// 	// })
-	// 	// console.log('result', result)
-	// }
-
-	// /**
-	//  * 弹窗关闭
-	//  */
-	// handleModalClose() {
-	// 	this.setState({
-	// 		modalVisible: false,
-	// 	});
-	// }
-
-	// /**
-	//  * handleTabChange
-	//  */
 	const tabList = [
 		{
 			id: 1,
@@ -190,12 +86,6 @@ const Index = () => {
 		setTab(e.id - 1);
 	};
 
-	// const handleOk = ()=> {
-	// 	this.setState({
-	// 		modalVisible: false,
-	// 	});
-	// }
-	// render() {
 	return (
 		<View className='index'>
 			<Swiper

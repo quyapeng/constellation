@@ -29,17 +29,16 @@ class App extends Component {
 		/**
 		 * 主包页面声明开始 注释用于判断开始行 勿动
 		 */
-    pages: [
-      "pages/home/index",
-      "pages/common/imgPreview",
-      "pages/message/FormValidate",
-      "pages/message/comp",
-      "pages/message/hooks",
-      "pages/message/index",
-      "pages/user/index"
+		pages: [
+			'pages/home/index',
+			'pages/common/imgPreview',
+			'pages/message/FormValidate',
+			'pages/message/comp',
+			'pages/message/hooks',
+			'pages/message/index',
+			'pages/user/index',
 		],
-		subPackages: [
-		],  // 页面声明结束 注释用于判断结束行 勿动
+		subPackages: [], // 页面声明结束 注释用于判断结束行 勿动
 		window: {
 			backgroundTextStyle: 'light',
 			navigationBarBackgroundColor: '#fff',
@@ -57,18 +56,18 @@ class App extends Component {
 					pagePath: 'pages/home/index',
 					text: '首页',
 				},
-				// {
-				// 	iconPath: 'assets/images/icon/icon_tabbar_goods_default.png',
-				// 	selectedIconPath: 'assets/images/icon/icon_tabbar_goods_selected.png',
-				// 	pagePath: 'pages/message/index',
-				// 	text: '消息中心',
-				// },
-				// {
-				// 	iconPath: 'assets/images/icon/icon_tabbar_order_default.png',
-				// 	selectedIconPath: 'assets/images/icon/icon_tabbar_order_selected.png',
-				// 	pagePath: 'pages/user/index',
-				// 	text: '我的',
-				// },
+				{
+					iconPath: 'assets/images/icon/icon_tabbar_goods_default.png',
+					selectedIconPath: 'assets/images/icon/icon_tabbar_goods_selected.png',
+					pagePath: 'pages/message/index',
+					text: '消息中心',
+				},
+				{
+					iconPath: 'assets/images/icon/icon_tabbar_order_default.png',
+					selectedIconPath: 'assets/images/icon/icon_tabbar_order_selected.png',
+					pagePath: 'pages/user/index',
+					text: '我的',
+				},
 			],
 		},
 	};

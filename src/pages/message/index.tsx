@@ -1,10 +1,7 @@
 import { ComponentType } from 'react';
 import Taro, { Component, Config } from '@tarojs/taro';
 import { View, Image, Text, Icon } from '@tarojs/components';
-import { observer, inject } from '@tarojs/mobx';
 
-import QQMapWSService from '~/services/qqMap/ws.service';
-import LianouService from '~/services/root/drug.service';
 import './index.scss';
 
 type PageStateProps = {
