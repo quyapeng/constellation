@@ -5,7 +5,7 @@ import "./index.scss";
 const Index = () => {
   return (
     <View className="index">
-      <Text>个人中心</Text>
+      <Text>Hello world!</Text>
     </View>
   );
 };
