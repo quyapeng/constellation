@@ -19,8 +19,8 @@ export default defineAppConfig({
 				text: '首页',
 			},
 			{
-				iconPath: 'assets/images/icon/icon_tabbar_home_default.png',
-				selectedIconPath: 'assets/images/icon/icon_tabbar_home_selected.png',
+				iconPath: 'assets/images/icon/icon_tabbar_order_default.png',
+				selectedIconPath: 'assets/images/icon/icon_tabbar_order_selected.png',
 				pages: 'pages/user/index',
 				pagePath: 'pages/user/index',
 				text: '个人中心',
