@@ -3,14 +3,13 @@
  */
 
 const pages = [
-  'pages/home/index',
-  'pages/common/imgPreview',
-  'pages/message/FormValidate',
-  'pages/message/comp',
-  'pages/message/hooks',
-  'pages/message/index',
-  'pages/user/index',
+	'pages/home/index',
+	'pages/common/imgPreview',
+	'pages/message/FormValidate',
+	'pages/message/comp',
+	'pages/message/hooks',
+	'pages/message/index',
+	'pages/user/index',
+];
 
-]
-
-module.exports = pages
+module.exports = pages;

@@ -1,18 +1,16 @@
-import { ComponentType } from 'react';
+import { ComponentType, useState } from 'react';
 import Taro, {
 	Component,
 	Config,
-	useState,
 	useReady,
 	useDidShow,
 	useDidHide,
 	usePullDownRefresh,
 } from '@tarojs/taro';
 import { View, Image, Text, Swiper, SwiperItem } from '@tarojs/components';
-
 import { HdTabs } from 'taro-ui-hd';
-
-import HomeService from '~/services/home/home.service';
+// const banner = require('～/assets/images/label/banner.png');
+// import HomeService from '~/services/home/home.service';
 import './index.scss';
 
 const Index = () => {
@@ -24,24 +22,24 @@ const Index = () => {
 			{
 				name: '星座',
 				// mode: 'aspectFit',
-				src: require('~/assets/images/label/icon_1.png'),
+				src: '../../assets/images/label/icon_1.png',
 			},
-			{
-				name: '星语',
-				src: require('~/assets/images/label/icon_2.png'),
-			},
-			{
-				name: '星盘',
-				src: require('~/assets/images/label/icon_3.png'),
-			},
-			{
-				name: '运势',
-				src: require('~/assets/images/label/icon_4.png'),
-			},
-			{
-				name: '更多',
-				src: require('~/assets/images/label/more.png'),
-			},
+			// {
+			// 	name: '星语',
+			// 	src: require('~/assets/images/label/icon_2.png'),
+			// },
+			// {
+			// 	name: '星盘',
+			// 	src: require('~/assets/images/label/icon_3.png'),
+			// },
+			// {
+			// 	name: '运势',
+			// 	src: require('~/assets/images/label/icon_4.png'),
+			// },
+			// {
+			// 	name: '更多',
+			// 	src: require('~/assets/images/label/more.png'),
+			// },
 		],
 		tabList: [
 			{
@@ -58,7 +56,8 @@ const Index = () => {
 			},
 		],
 		currentTab: 0,
-		iconurl: require('~/assets/images/label/icon_1.png'),
+		iconurl: '',
+		// require('~/assets/images/label/icon_1.png'),
 	};
 
 	// const async function getBanner() {
@@ -99,14 +98,14 @@ const Index = () => {
 				<SwiperItem>
 					<Image
 						style='width:100%;height: 100%;background: #fff;'
-						src={require('~/assets/images/label/banner.png')}
+						src={'../../assets/images/label/banner.png'}
 					/>
 				</SwiperItem>
 				<SwiperItem>
 					<View className='demo-text-2'>
 						<Image
 							style='width:100%;height: 100%;background: #fff;'
-							src={require('~/assets/images/label/banner.png')}
+							src={'../../assets/images/label/banner.png'}
 						/>
 					</View>
 				</SwiperItem>
@@ -114,7 +113,7 @@ const Index = () => {
 					<View className='demo-text-3'>
 						<Image
 							style='width:100%;height: 100%;background: #fff;'
-							src={require('~/assets/images/label/banner.png')}
+							src={'../../assets/images/label/banner.png'}
 						/>
 					</View>
 				</SwiperItem>
