@@ -1,5 +1,5 @@
 /**
- * 获取运行华宁
+ * 获取运行环境
  */
 
 class GetEnv {
@@ -8,11 +8,11 @@ class GetEnv {
 	 */
 	isWechatH5 = () => {
 		if (navigator) {
-			const userAgent: any = navigator.userAgent.toLowerCase()
-			return userAgent.match(/MicroMessenger/i) == 'micromessenger'
+			const userAgent: any = navigator.userAgent.toLowerCase();
+			return userAgent.match(/MicroMessenger/i) == 'micromessenger';
 		}
-		return false
-	}
+		return false;
+	};
 }
 
-export default new GetEnv()
+export default new GetEnv();

@@ -27,5 +27,8 @@
     "node_modules",
     "dist"
   ],
-  "compileOnSave": false
+  "compileOnSave": false,
+  "paths":{
+    "～/assets/*":["./src/assets/*"]
+  }
 }
