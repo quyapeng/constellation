@@ -22,13 +22,6 @@
       "node_modules/@types"
     ]
   },
-  "include": ["./src", "global.d.ts"],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "compileOnSave": false,
-  "paths":{
-    "～/assets/*":["./src/assets/*"]
-  }
+  "include": ["./src", "./types"],
+  "compileOnSave": false
 }
