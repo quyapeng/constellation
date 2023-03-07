@@ -43,7 +43,7 @@
 		"@tarojs/react": "3.4.0",
 		"@tarojs/runtime": "3.4.0",
 		"@tarojs/taro": "3.4.0",
-		"react": "^17.0.0",
+		"yarn ": "^17.0.0",
 		"react-dom": "^17.0.0",
 		"taro-ui-hd": "^0.0.3"
 	},
