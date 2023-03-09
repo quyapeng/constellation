@@ -18,7 +18,7 @@ export default class Index extends Component<PropsWithChildren> {
     return (
       <View className="index">
         <Text>我的</Text>
-        {/* <AtButton>点击</AtButton> */}
+        <AtButton>点击</AtButton>
       </View>
     );
   }
